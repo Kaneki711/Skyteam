@@ -301,8 +301,8 @@ kimid = ki.getProfile().mid
 agmid = ag.getProfile().mid
 Bots=[mid,kimid,agmid]
 admin=[]
-owner=["u4a361586c55ac4ef218a0a9b78b2f1b3"]
-Creator=["u4a361586c55ac4ef218a0a9b78b2f1b3"]
+owner=["uc77fd25b59f6e563d84f1334f3fed10b"]
+Creator=["uc77fd25b59f6e563d84f1334f3fed10b"]
 staff=[]
 
 wait = {
