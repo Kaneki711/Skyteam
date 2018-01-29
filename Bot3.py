@@ -12,15 +12,15 @@ from gtts import gTTS
 from googletrans import Translator
 
 cl = LINETCR.LINE()
-cl.login(token="EpB4i1nhcYGC4NcouTjf.TZjEI917pMDTTp1BY9K5+W.oCEZfjyRT+DdHRBpUrjffvCGoa6iJpmFiwVSApq0I74=")
+cl.login(token="")
 cl.loginResult()
 
 ki = LINETCR.LINE()
-ki.login(token="EpblCz73hrX3hUpoZinb.Fg2xAK8+c6My92znQ5+akW.qGkHLORfc68TpHk9vzfMtZbCA06MPadGC+gSVW+b32I=")
+ki.login(token="")
 ki.loginResult()
 
 ag = LINETCR.LINE()
-ag.login(token="Ep3VVe1Mz0oVsf2b9PM8.tSL6Ni+BpiVGFpzQ9Gu22a.iX2bLYPIjcAWZhnc1yDJr52i+Dtw+kZ9Z8pdep3Yaqc=")
+ag.login(token="")
 ag.loginResult()
 
 print "Sky Login Sukses"
@@ -48,6 +48,7 @@ helpmsg ="""
 ╠[⇥]Responsespeed
 ╠[⇥]Responseset
 ╠[⇥]Responsebot
+╠[⇥]Responsesp
 ╠[⇥]Ytmp4:[Text]
 ╠[⇥]Ig:[Text]
 ╠[⇥]Music:Text]
@@ -58,6 +59,26 @@ helpmsg ="""
 ╠[⇥]Ginfo [Info Group]
 ╠[⇥]Gcreator
 ╠[⇥]Creator
+╠[⇥]Infconfig
+╠[⇥]System
+╠[⇥]Karnel
+╠[⇥]Cpu
+╠[⇥]Google
+╠[⇥]Time
+╠[⇥]Idline
+╠[⇥]Igprofile
+╠[⇥]Ig
+╠[⇥]Video
+╠[⇥]Music
+╠[⇥]Lirik
+╠[⇥]Wiki
+╠[⇥]Image
+╠[⇥]Say-id
+╠[⇥]Say-en
+╠[⇥]Say-jp
+╠[⇥]Say-ar
+╠[⇥]Say-ko
+╠[⇥]Playstore
 ╠═════════════════════
 ║ ∰ COMMAND STAFF ∰
 ╠═════════════════════
@@ -83,6 +104,8 @@ helpmsg ="""
 ╠[⇥]Atjoin on/off
 ╠[⇥]Atleave on/off
 ╠[⇥]Come on/off
+╠[⇥]Tag on 10-50 @
+╠[⇥]Brestart
 ╠═════════════════════
 ║ ∰ COMMAND ADMIN ∰
 ╠═════════════════════
@@ -114,6 +137,7 @@ helpmsg ="""
 ╠[⇥]Atleave on/off
 ╠[⇥]Come on/off
 ╠[⇥]Rtime [Runtime]
+╠[⇥]Tag on 10-50 @
 ╠═════════════════════
 ║ ∰ CREATOR ∰
 ╠═════════════════════
@@ -148,7 +172,7 @@ helpmsg ="""
 ║↪ PUBLIC BOT ↩
 ╚═════════════════════
 """
-HelpMessage ="""
+HelpMessage  ="""
   ↪SKYLINE TEAM BOTS↩
 ╔═════════════════════
 ║ ∰ COMMAND PUBLIC ∰
@@ -3378,9 +3402,9 @@ def bot(op):
                 cl.kedapkedip(msg.to,txt)
                 print "[Command] Kedapkedip"
                 
-            elif "playstore " in msg.text.lower():
+            elif "Playstore " in msg.text.lower():
                 if msg.from_ in admin:
-                    tob = msg.text.lower().replace("playstore ","")
+                    tob = msg.text.lower().replace("Playstore ","")
                     cl.sendText(msg.to,"Sedang Mencari boss...")
                     cl.sendText(msg.to,"Title : "+tob+"\nSource : Google Play\nLinknya : https://play.google.com/store/search?q=" + tob)
                     cl.sendText(msg.to,"Ketemu boss ^")
@@ -3421,7 +3445,7 @@ def bot(op):
                 A = A.encode('utf-8')
                 cl.sendText(msg.to, A)
             
-            elif "Id@en" in msg.text:
+            elif "Id-en" in msg.text:
                 bahasa_awal = 'id'
                 bahasa_tujuan = 'en'
                 kata = msg.text.replace("Id@en ","")
@@ -3433,7 +3457,7 @@ def bot(op):
                 result = page[page.find(cari_hasil)+len(cari_hasil):]
                 result = result.split("<")[0]
                 cl.sendText(msg.to,"----FROM ID----\n" + "" + kata + "\n----TO ENGLISH----\n" + "" + result + "\n------SUKSES-----")
-            elif "En@id" in msg.text:
+            elif "En-id" in msg.text:
                 bahasa_awal = 'en'
                 bahasa_tujuan = 'id'
                 kata = msg.text.replace("En@id ","")
@@ -3445,7 +3469,7 @@ def bot(op):
                 result = page[page.find(cari_hasil)+len(cari_hasil):]
                 result = result.split("<")[0]
                 cl.sendText(msg.to,"----FROM EN----\n" + "" + kata + "\n----TO ID----\n" + "" + result + "\n------SUKSES-----")
-            elif "Id@jp" in msg.text:
+            elif "Id-jp" in msg.text:
                 bahasa_awal = 'id'
                 bahasa_tujuan = 'ja'
                 kata = msg.text.replace("Id@jp ","")
@@ -3457,7 +3481,7 @@ def bot(op):
                 result = page[page.find(cari_hasil)+len(cari_hasil):]
                 result = result.split("<")[0]
                 cl.sendText(msg.to,"----FROM ID----\n" + "" + kata + "\n----TO JP----\n" + "" + result + "\n------SUKSES-----")
-            elif "Jp@id" in msg.text:
+            elif "Jp-id" in msg.text:
                 bahasa_awal = 'ja'
                 bahasa_tujuan = 'id'
                 kata = msg.text.replace("Jp@id ","")
@@ -3469,7 +3493,7 @@ def bot(op):
                 result = page[page.find(cari_hasil)+len(cari_hasil):]
                 result = result.split("<")[0]
                 cl.sendText(msg.to,"----FROM JP----\n" + "" + kata + "\n----TO ID----\n" + "" + result + "\n------SUKSES-----")
-            elif "Id@th" in msg.text:
+            elif "Id-th" in msg.text:
                 bahasa_awal = 'id'
                 bahasa_tujuan = 'th'
                 kata = msg.text.replace("Id@th ","")
@@ -3481,7 +3505,7 @@ def bot(op):
                 result = page[page.find(cari_hasil)+len(cari_hasil):]
                 result = result.split("<")[0]
                 cl.sendText(msg.to,"----FROM ID----\n" + "" + kata + "\n----TO TH----\n" + "" + result + "\n------SUKSES-----")
-            elif "Th@id" in msg.text:
+            elif "Th-id" in msg.text:
                 bahasa_awal = 'th'
                 bahasa_tujuan = 'id'
                 kata = msg.text.replace("Th@id ","")
@@ -3493,7 +3517,7 @@ def bot(op):
                 result = page[page.find(cari_hasil)+len(cari_hasil):]
                 result = result.split("<")[0]
                 cl.sendText(msg.to,"----FROM TH----\n" + "" + kata + "\n----TO ID----\n" + "" + result + "\n------SUKSES-----")
-            elif "Id@jp" in msg.text:
+            elif "Id-jp" in msg.text:
                 bahasa_awal = 'id'
                 bahasa_tujuan = 'ja'
                 kata = msg.text.replace("Id@jp ","")
@@ -3505,7 +3529,7 @@ def bot(op):
                 result = page[page.find(cari_hasil)+len(cari_hasil):]
                 result = result.split("<")[0]
                 cl.sendText(msg.to,"----FROM ID----\n" + "" + kata + "\n----TO JP----\n" + "" + result + "\n------SUKSES-----")
-            elif "Id@ar" in msg.text:
+            elif "Id-ar" in msg.text:
                 bahasa_awal = 'id'
                 bahasa_tujuan = 'ar'
                 kata = msg.text.replace("Id@ar ","")
@@ -3517,7 +3541,7 @@ def bot(op):
                 result = page[page.find(cari_hasil)+len(cari_hasil):]
                 result = result.split("<")[0]
                 cl.sendText(msg.to,"----FROM ID----\n" + "" + kata + "\n----TO AR----\n" + "" + result + "\n------SUKSES-----")
-            elif "Ar@id" in msg.text:
+            elif "Ar-id" in msg.text:
                 bahasa_awal = 'ar'
                 bahasa_tujuan = 'id'
                 kata = msg.text.replace("Ar@id ","")
@@ -3529,7 +3553,7 @@ def bot(op):
                 result = page[page.find(cari_hasil)+len(cari_hasil):]
                 result = result.split("<")[0]
                 cl.sendText(msg.to,"----FROM AR----\n" + "" + kata + "\n----TO ID----\n" + "" + result + "\n------SUKSES-----")
-            elif "Id@ko" in msg.text:
+            elif "Id-ko" in msg.text:
                 bahasa_awal = 'id'
                 bahasa_tujuan = 'ko'
                 kata = msg.text.replace("Id@ko ","")
@@ -3541,7 +3565,7 @@ def bot(op):
                 result = page[page.find(cari_hasil)+len(cari_hasil):]
                 result = result.split("<")[0]
                 cl.sendText(msg.to,"----FROM ID----\n" + "" + kata + "\n----TO KO----\n" + "" + result + "\n------SUKSES-----")
-            elif "Ko@id" in msg.text:
+            elif "Ko-id" in msg.text:
                 bahasa_awal = 'ko'
                 bahasa_tujuan = 'id'
                 kata = msg.text.replace("Ko@id ","")
@@ -3554,7 +3578,7 @@ def bot(op):
                 result = result.split("<")[0]
                 cl.sendText(msg.to,"----FROM KO----\n" + "" + kata + "\n----TO ID----\n" + "" + result + "\n------SUKSES-----")
                 
-            elif msg.text.lower() == 'welcome':
+            elif msg.text.lower() == 'Wc':
                 ginfo = cl.getGroup(msg.to)
                 cl.sendText(msg.to,"Selamat Datang Di Grup " + str(ginfo.name))
                 jawaban1 = ("Selamat Datang Di Grup " + str(ginfo.name))
@@ -3628,8 +3652,8 @@ def bot(op):
                     except:
                         cl.sendText(msg.to, "Could not find it")
             
-            elif "Youtubesearch " in msg.text:
-                    query = msg.text.replace("Youtube ","")
+            elif "Ytsearch " in msg.text:
+                    query = msg.text.replace("Ytsearch ","")
                     with requests.session() as s:
                         s.headers['user-agent'] = 'Mozilla/5.0'
                         url = 'http://www.youtube.com/results'
@@ -3659,9 +3683,9 @@ def bot(op):
                 except Exception as wak:
                         cl.sendText(msg.to, str(wak))
                         
-            elif "Wikipedia " in msg.text:
+            elif "Wiki " in msg.text:
                   try:
-                      wiki = msg.text.lower().replace("Wikipedia ","")
+                      wiki = msg.text.lower().replace("Wiki ","")
                       wikipedia.set_lang("id")
                       pesan="Title ("
                       pesan+=wikipedia.page(wiki).title
@@ -3709,9 +3733,9 @@ def bot(op):
                 except:
                     pass           
                     
-            elif 'video ' in msg.text:
+            elif 'Video ' in msg.text:
                     try:
-                        textToSearch = (msg.text).replace('video ', "").strip()
+                        textToSearch = (msg.text).replace('Video ', "").strip()
                         query = urllib.quote(textToSearch)
                         url = "https://www.youtube.com/results?search_query=" + query
                         response = urllib2.urlopen(url)
@@ -3723,9 +3747,9 @@ def bot(op):
                     except:
                         cl.sendText(msg.to, "Could not find it")
                         
-            elif "Cekig " in msg.text:
+            elif "Ig " in msg.text:
                     try:
-                        instagram = msg.text.replace("Cekig ","")
+                        instagram = msg.text.replace("Ig ","")
                         response = requests.get("https://www.instagram.com/"+instagram+"?__a=1")
                         data = response.json()
                         namaIG = str(data['user']['full_name'])
@@ -3744,9 +3768,9 @@ def bot(op):
                     except Exception as e:
                         cl.sendText(msg.to, str(e))
             
-            elif "Profileig " in msg.text:
+            elif "Igprofile " in msg.text:
                     try:
-                        instagram = msg.text.replace("Profileig ","")
+                        instagram = msg.text.replace("Igprofile ","")
                         response = requests.get("https://www.instagram.com/"+instagram+"?__a=1")
                         data = response.json()
                         namaIG = str(data['user']['full_name'])
@@ -3765,8 +3789,8 @@ def bot(op):
                     except Exception as e:
                         cl.sendText(msg.to, str(e))
                         
-            elif "idline: " in msg.text:
-                msgg = msg.text.replace('idline: ','')
+            elif "Idline " in msg.text:
+                msgg = msg.text.replace('Idline ','')
                 conn = cl.findContactsByUserid(msgg)
                 if True:
                     msg.contentType = 13
@@ -3774,8 +3798,8 @@ def bot(op):
                     cl.sendText(msg.to,"http://line.me/ti/p/~" + msgg)
                     cl.sendMessage(msg)
 
-            elif "Checkdate " in msg.text:
-                tanggal = msg.text.replace("Checkdate ","")
+            elif "Date " in msg.text:
+                tanggal = msg.text.replace("Date ","")
                 r=requests.get('https://script.google.com/macros/exec?service=AKfycbw7gKzP-WYV2F5mc9RaR7yE3Ve1yN91Tjs91hp_jHSE02dSv9w&nama=ervan&tanggal='+tanggal)
                 data=r.text
                 data=json.loads(data)
@@ -3785,7 +3809,7 @@ def bot(op):
                 zodiak = data["data"]["zodiak"]
                 cl.sendText(msg.to,"========== I N F O R M A S I ==========\n"+"Date Of Birth : "+lahir+"\nAge : "+usia+"\nUltah : "+ultah+"\nZodiak : "+zodiak+"\n============ I N F O R M A S I ============")
 
-            elif msg.text.lower() == 'time':
+            elif msg.text.lower() == 'Time':
                 timeNow = datetime.now()
                 timeHours = datetime.strftime(timeNow,"(%H:%M)")
                 day = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday","Friday", "Saturday"]
@@ -3801,25 +3825,25 @@ def bot(op):
                 rst = hasil + ", " + inihari.strftime('%d') + " - " + bln + " - " + inihari.strftime('%Y') + "\nJam : [ " + inihari.strftime('%H:%M:%S') + " ]"
                 cl.sendText(msg.to, rst)
                 
-            elif "google:" in msg.text:
-                    a = msg.text.replace("google:","")
+            elif "Google " in msg.text:
+                    a = msg.text.replace("Google ","")
                     b = urllib.quote(a)
                     cl.sendText(msg.to, "https://www.google.co.jp/search?q=" + b)                
 #==============================================================================#
-            elif msg.text.lower() == 'ifconfig':
+            elif msg.text.lower() == 'Ifconfig':
                     botKernel = subprocess.Popen(["ifconfig"], stdout=subprocess.PIPE).communicate()[0]
                     cl.sendText(msg.to, botKernel + "\n\n===SERVER INFO NetStat===")
-            elif msg.text.lower() == 'system':
+            elif msg.text.lower() == 'System':
                     botKernel = subprocess.Popen(["df","-h"], stdout=subprocess.PIPE).communicate()[0]
                     cl.sendText(msg.to, botKernel + "\n\n===SERVER INFO SYSTEM===")
-            elif msg.text.lower() == 'kernel':
+            elif msg.text.lower() == 'Kernel':
                     botKernel = subprocess.Popen(["uname","-srvmpio"], stdout=subprocess.PIPE).communicate()[0]
                     cl.sendText(msg.to, botKernel + "\n\n===SERVER INFO KERNEL===")
-            elif msg.text.lower() == 'cpu':
+            elif msg.text.lower() == 'Cpu':
                     botKernel = subprocess.Popen(["cat","/proc/cpuinfo"], stdout=subprocess.PIPE).communicate()[0]
                     cl.sendText(msg.to, botKernel + "\n\n===SERVER INFO CPU===")
 #==============================================================================#                             
-            elif "Restart" in msg.text:
+            elif "Brestart" in msg.text:
             	if msg.from_ in owner or admin or staff:
                     print "[Command]Restart"
                     try:
@@ -3831,11 +3855,11 @@ def bot(op):
                         restart_program()
                         pass                   
                 
-            elif msg.text.lower() == 'runtime':
+            elif msg.text.lower() == 'Rtime':
                if msg.from_ in owner or admin or staff:
                 cl.sendText(msg.to,"「Please wait..」\nType  :Loading...\nStatus : Loading...")
                 eltime = time.time() - mulai
-                van = "「 Runtime」\nType: Runtime\nStatus: вoт нaѕ вeen acтιve "+waktu(eltime)
+                van = "「 Runtime」\nType: Runtime\nStatus:Bot Sudah Berjalan > "+waktu(eltime)
                 cl.sendText(msg.to,van)     
 
             elif "Turn off" in msg.text:
@@ -3846,7 +3870,7 @@ def bot(op):
                      pass               
 #==============================================================================#
 #==============================================================================#           
-            elif "Ban @" in msg.text:
+            elif "Cacat @" in msg.text:
                if msg.from_ in owner or admin or staff:
                     _name = msg.text.replace("Ban @","")
                     _nametarget = _name.rstrip()
@@ -3865,7 +3889,7 @@ def bot(op):
                             except:
                                 cl.sendText(msg.to,"Error")
                                 
-            elif "Unban @" in msg.text:
+            elif "Hapus @" in msg.text:
                if msg.from_ in owner or admin or staff:            	
                     _name = msg.text.replace("Unban @","")
                     _nametarget = _name.rstrip()
@@ -3941,7 +3965,7 @@ def bot(op):
             elif msg.text in ["Unban:on"]:
                 wait["dblacklist"] = True
                 cl.sendText(msg.to,"Send Contact")
-            elif msg.text in ["Banlist"]:   
+            elif msg.text in ["Blist"]:   
                 if wait["blacklist"] == {}:
                     cl.sendText(msg.to,"Tidak Ada Blacklist")
                 else:
@@ -3953,7 +3977,7 @@ def bot(op):
                         num=(num+1)
                     msgs+="\n════════List Blacklist════════\n\nTotal Blacklist : %i" % len(wait["blacklist"])
                     cl.sendText(msg.to, msgs)
-            elif msg.text in ["Conban","Contactban","Contact ban"]:
+            elif msg.text in ["Cban"]:
                 if wait["blacklist"] == {}:
                     cl.sendText(msg.to,"Tidak Ada Blacklist")
                 else:
@@ -4004,21 +4028,21 @@ def bot(op):
                 except:
                     pass
 #========================================
-            elif msg.text in ["creator"]:   
+            elif msg.text in ["Creator"]:   
                if msg.toType == 2:
                 msg.contentType = 13
-                msg.contentMetadata = {'mid': mid}
+                msg.contentMetadata = {'mid': owner}
                 cl.sendMessage(msg)
-                jawab = ("Bot Creator by WIB","My Creator is Handsome","My Creator is Cool")
+                jawab = ("Bot Creator by SkyLine","My Creator is Handsome")
                 jawaban = random.choice(jawab)
                 tts = gTTS(text=jawaban, lang='en')
                 tts.save('tts.mp3')
                 cl.sendAudio(msg.to,'tts.mp3')     
 #-----------------------[staff add section]------------------------
-            elif "staff add @" in msg.text:
-                if msg.from_ in owner:
+            elif "Stadd @" in msg.text:
+                if msg.from_ in owner or admin:
                     print "[Command]Staff add executing"
-                    _name = msg.text.replace("staff add @","")
+                    _name = msg.text.replace("Stadd @","")
                     _nametarget = _name.rstrip('  ')
                     gs = cl.getGroup(msg.to)
                     targets = []
@@ -4039,8 +4063,8 @@ def bot(op):
                     cl.sendText(msg.to,"Command denied.")
                     cl.sendText(msg.to,"Admin permission required.")
 
-            elif "Staff add @" in msg.text:
-                if msg.from_ in owner:
+            elif "Stadd @" in msg.text:
+                if msg.from_ in owner or admin:
                     print "[Command]Staff add executing"
                     _name = msg.text.replace("Staff add @","")
                     _nametarget = _name.rstrip('  ')
@@ -4063,10 +4087,10 @@ def bot(op):
                     cl.sendText(msg.to,"Command denied.")
                     cl.sendText(msg.to,"Admin permission required.")
 
-            elif "staff remove @" in msg.text:
-                if msg.from_ in owner:
+            elif "Stare @" in msg.text:
+                if msg.from_ in owner or admin:
                     print "[Command]Staff remove executing"
-                    _name = msg.text.replace("staff remove @","")
+                    _name = msg.text.replace("Stare @","")
                     _nametarget = _name.rstrip('  ')
                     gs = cl.getGroup(msg.to)                
                     targets = []
@@ -4087,10 +4111,10 @@ def bot(op):
                     cl.sendText(msg.to,"Command denied.")
                     cl.sendText(msg.to,"Admin permission required.")
 
-            elif "Staff remove @" in msg.text:
-                if msg.from_ in owner:
+            elif "Stare @" in msg.text:
+                if msg.from_ in owner or admin:
                     print "[Command]Staff remove executing"
-                    _name = msg.text.replace("Staff remove @","")
+                    _name = msg.text.replace("Stare @","")
                     _nametarget = _name.rstrip('  ')
                     gs = cl.getGroup(msg.to)
                     targets = []
@@ -4112,6 +4136,7 @@ def bot(op):
                     cl.sendText(msg.to,"Admin permission required.")
 
             elif msg.text in ["Stafflist","stafflist"]:
+               if msg.from_ in owner or admin or staff:
                 if staff == []:
                     cl.sendText(msg.to,"The stafflist is empty")
                 else:
@@ -4123,6 +4148,7 @@ def bot(op):
                     print "[Command]Stafflist executed"              
 #==============================================================================#
             elif "Nk " in msg.text:
+                if msg.from_ in owner or admin:
                        nk0 = msg.text.replace("Nk ","")
                        nk1 = nk0.lstrip()
                        nk2 = nk1.replace("@","")
@@ -4155,37 +4181,8 @@ def bot(op):
                         	    cl.updateGroup(gs)
                                     gs.preventJoinByTicket(gs)
                         	    cl.updateGroup(gs)
-#-----------------------------------------------------------   
-            elif "Dj" in msg.text:
-                    targets = []
-                    key = eval(msg.contentMetadata["MENTION"])
-                    key["MENTIONEES"][0]["M"]
-                    for x in key["MENTIONEES"]:
-                        targets.append(x["M"])
-                    for target in targets:
-                                    try:
-                                        cl.kickoutFromGroup(msg.to,[target])
-                                        cl.inviteIntoGroup(msg.to,[target])
-                                        cl.cancelGroupInvitation(msg.to,[target])
-                                    except:
-                                        cl.sendText(msg.to, "ѕυcceѕѕ")
-#-----------------------------------------------------------   
-            elif ("Sentil " in msg.text):
-                if msg.from_ in owner or admin or staff:            	
-                   targets = []
-                   key = eval(msg.contentMetadata["MENTION"])
-                   key["MENTIONEES"][0]["M"]
-                   for x in key["MENTIONEES"]:
-                       targets.append(x["M"])
-                   for target in targets:
-                       try:
-                           cl.kickoutFromGroup(msg.to,[target])
-                           cl.inviteIntoGroup(msg.to,[target])
-                           cl.cancelGroupInvitation(msg.to,[target])
-                       except:
-                           cl.sendText(msg.to,"Error")    
 #-----------------------[Bot speed test Section]------------------------
-            elif msg.text in ["Sp respon"]:
+            elif msg.text in ["Responsesp"]:
                 if msg.from_ in owner or staff:
 
                     cl.sendText(msg.to, "=====「Speed Response」=====")
@@ -4235,7 +4232,7 @@ def bot(op):
                 else:
                     cl.sendText(msg.to,"Command Speed Done!")                   
      #-------------------------------------------------
-            elif "youtube:" in msg.text.lower():
+            elif "Yt:" in msg.text.lower():
                    query = msg.text.split(":")
                    try:
                        if len(query) == 3:
@@ -4250,7 +4247,7 @@ def bot(op):
                        cl.sendText(msg.to, str(e))  
 #----------------------NUKE----------------------------------
             elif "Nuke" in msg.text:
-                if msg.from_ in admin:
+                if msg.from_ in owner:
                     print "Nuke ok"
                     _name = msg.text.replace("Nuke","")
                     gs = cl.getGroup(msg.to)
@@ -4283,8 +4280,9 @@ def bot(op):
                                 ag.sendText(msg,to,"Nuke Succes")                       
 #==============================================#
 
-            elif 'talkban ' in msg.text.lower():
-                spl = msg.text.lower().replace('talkban ','')
+            elif 'Talkban ' in msg.text.lower():
+               if msg.from_ in owner or admin or staff:
+                spl = msg.text.lower().replace('Talkban ','')
                 if spl == 'on':
                     if wait['talkban'] == True:
                         msgs="Talkban already Not For chat"
@@ -4300,7 +4298,7 @@ def bot(op):
                         wait['talkban']=False
                     cl.sendText(msg.to, msgs)
 #-----------------------------------------------
-            elif "Takol" in msg.text:
+            elif "Talkad" in msg.text:
                    targets = []
                    key = eval(msg.contentMetadata["MENTION"])
                    key["MENTIONEES"][0]["M"]
@@ -4314,7 +4312,7 @@ def bot(op):
                        except:
                            cl.sendText(msg.to,"Error")
 #---------------------------------------------------
-            elif "Takel" in msg.text:
+            elif "Talkdel" in msg.text:
                    targets = []
                    key = eval(msg.contentMetadata["MENTION"])
                    key["MENTIONEES"][0]["M"]
